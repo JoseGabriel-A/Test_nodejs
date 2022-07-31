@@ -1,0 +1,54 @@
+<div class="container">
+<body>
+  <div class="container mt-5">
+    <h1>Nodejs Mongodb CRUD Students Data</h1>
+
+
+    <form action="/student/add" method="POST">
+      <div>
+
+        
+        <input type="text" name="name" placeholder="Student's_name" id="name">
+        <input type="text" name="age" placeholder="Student's_age" id="age">
+        <button id="Add">Add New Student</button> 
+      
+      </div>
+
+    </form>
+
+    <h1>Data to be edit</h1>
+    <ul>
+      {{#each students}}
+      <li><h3>Student's_name:{{name}} - Student's_age: {{age}} - Active?: {{active}} </h3></li>
+      {{#if active}}
+      <a href="/toggleActivestudent/{{_id}}">Inactive</a>
+      {{else}}
+      <a href="/toggleActivestudent/{{_id}}">Active</a>
+      {{/if}}
+      
+      <a href="/editstudent/{{_id}}">Edit</a>
+      <a href="/deletestudent/{{_id}}">Delete</a>
+      
+      {{/each}}
+      
+    </ul>
+
+
+
+
+
+
+    <ul id="resultado">
+
+  </div>
+
+  </ul>
+ 
+    <nav class="navbar navbar-dark bg-dark mb-4">
+    <div class="container">
+        <a href="/" class="navbar-brand">View or modify Classroom Data</a>
+    </div>
+    </nav>
+</body>
+</html>
+</div>

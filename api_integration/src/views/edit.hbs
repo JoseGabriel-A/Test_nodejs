@@ -1,0 +1,47 @@
+<div class="container">
+  <h1>Nodejs Mongodb CRUD Updating Data of Students ... </h1>
+  <form action="/editstudent/{{student_by_id._id}}" method="POST">
+    <input
+      type="text"
+      name="name"
+      placeholder="name"
+      value="{{student_by_id.name}}"
+    />
+    <input
+      type="text"
+      name="age"
+      placeholder="age"
+      value="{{student_by_id.age}}"
+    />
+    <button>Update Student's Data</button>
+  </form>
+
+  <h1>Nodejs Mongodb CRUD Updating Data of Classroom ... </h1>
+  <form action="/edit/{{classroom_by_id._id}}" method="POST">
+    <input
+      type="text"
+      name="class_"
+      placeholder="Class"
+      value="{{classroom_by_id.class_}}"
+    />
+    <input
+      type="text"
+      name="order_"
+      placeholder="Order"
+      value="{{classroom_by_id.order_}}"
+    />
+    <input
+      type="text"
+      name="number_of_students"
+      placeholder="number_of_students"
+      value="{{classroom_by_id.number_of_students}}"
+    />
+    <textarea
+      name="students_list"
+      rows="3"
+      placeholder="students_list"
+    >{{classroom_by_id.students_list}}</textarea>
+    <button>Update Classroom</button>
+  </form>
+
+</div>

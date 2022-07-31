@@ -1,0 +1,62 @@
+
+<div class="container">
+<body>
+  <div class="container mt-5">
+
+    <h1>Nodejs Mongodb CRUD Classroom</h1>
+    <form action="/classroom/add" method="POST">
+      <div>
+
+        
+        <input type="text" name="class_" placeholder="Enter_class" id="class_">
+        <input type="text" name="order_" placeholder="Enter_order" id="order_">
+        <input type="text" name="number_of_students" placeholder="number_of_students" id="number_of_students">
+        <textarea name="students_list" rows="2" placeholder="students_list">{{classroom.students_list}}</textarea>
+        <button id="Add">Add New Classroom</button> 
+      
+      </div>
+
+    </form>
+
+
+    <h1>Data to be edit</h1>
+    <ul>
+      {{#each classroom}}
+      <li><h3>Class: {{class_}} - Order: {{order_}} -Number_of_students:{{number_of_students}} - Active: {{active}} - Students_list:{{students_list}}</h3></li>
+      {{#if active}}
+      <a href="/toggleActive/{{_id}}">Inactive</a>
+      {{else}}
+      <a href="/toggleActive/{{_id}}">Active</a>
+      {{/if}}
+      
+      <a href="/edit/{{_id}}">Edit</a>
+      <a href="/delete/{{_id}}">Delete</a>
+      
+      {{/each}}
+      
+    </ul>
+
+   
+    
+
+    <nav class="navbar navbar-dark bg-dark mb-4">
+    <div class="container">
+        <a href="/modify" class="navbar-brand">View or modify Students Data</a>
+    </div>
+    </nav>
+
+    
+
+
+   
+    
+   
+  
+
+  
+  
+
+</body>
+</div>
+
+</html>
